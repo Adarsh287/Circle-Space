@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Platform - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Community Platform</div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="home.html" class="active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Categories</a>
+                        <div class="dropdown-menu">
+                            <a href="category.html?category=health" class="category-link">Health</a>
+                            <a href="category.html?category=education" class="category-link">Education</a>
+                            <a href="category.html?category=sports" class="category-link">Sports</a>
+                            <a href="category.html?category=technology" class="category-link">Technology</a>
+                            <a href="category.html?category=entertainment" class="category-link">Entertainment</a>
+                            <a href="category.html?category=lifestyle" class="category-link">Lifestyle</a>
+                        </div>
+                    </li>
+                    <li><a href="#" id="createPostBtn">Create Post</a></li>
+                </ul>
+            </div>
+            <div class="user-actions">
+                <span id="userDisplayName"></span>
+                <button id="logoutBtn" type="submit" 
+                
+                >Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="categories-grid">
+            <div class="category-card" data-category="health">
+                <h3>Health</h3>
+                <p>Discussions about health, wellness, and fitness</p>
+            </div>
+            <div class="category-card" data-category="education">
+                <h3>Education</h3>
+                <p>Topics related to learning, schools, and education</p>
+            </div>
+            <div class="category-card" data-category="sports">
+                <h3>Sports</h3>
+                <p>All about sports, games, and athletic activities</p>
+            </div>
+            <div class="category-card" data-category="technology">
+                <h3>Technology</h3>
+                <p>Tech news, gadgets, and digital innovations</p>
+            </div>
+            <div class="category-card" data-category="entertainment">
+                <h3>Entertainment</h3>
+                <p>Movies, music, TV shows, and other entertainment</p>
+            </div>
+            <div class="category-card" data-category="lifestyle">
+                <h3>Lifestyle</h3>
+                <p>Fashion, food, travel, and daily life</p>
+            </div>
+        </div>
+
+        <div class="recent-posts">
+            <h2>Recent Posts</h2>
+            <div id="postsContainer" class="posts-grid"></div>
+        </div>
+    </div>
+
+    <!-- Create Post Modal -->
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Post</h2>
+            <form id="createPostForm">
+                <div class="form-group">
+                    <label for="postTitle">Title</label>
+                    <input type="text" id="postTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="postCategory">Category</label>
+                    <select id="postCategory" required>
+                        <option value="">Select a category</option>
+                        <option value="health">Health</option>
+                        <option value="education">Education</option>
+                        <option value="sports">Sports</option>
+                        <option value="technology">Technology</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="lifestyle">Lifestyle</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="postContent">Content</label>
+                    <textarea id="postContent" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

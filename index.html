@@ -21,7 +21,8 @@
                         <label for="login-password">Password</label>
                         <input type="password" id="login-password" required>
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit" onclick="openPage( )">Login</button>
+                    <!-- <a href="home.html"></a> -->
                     <p class="error-message" id="login-error"></p>
                 </form>
                 <p>Don't have an account? <a href="#" id="show-register">Register here</a></p>
@@ -49,6 +50,7 @@
         <div id="logged-in-view" class="hidden">
             <h2>Welcome!</h2>
             <p>You are logged in as: <span id="user-email"></span></p>
+            <!-- <a href='home.html'></a> -->
             <button id="logout-button">Logout</button>
         </div>
 

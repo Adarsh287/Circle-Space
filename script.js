@@ -7,6 +7,13 @@ const firebaseConfig = {
     appId: "1:378118087548:web:a57649b4d4302733e4faf9",
     measurementId: "G-LFPPGG23KL" 
 };
+function openPage(){
+    window.location.href='home.html'
+}
+
+function moveToLogin(){
+    window.location.href='index.html'
+};
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth(); 
@@ -110,6 +117,7 @@ loginForm.addEventListener('submit', (e) => {
             console.log("User logged in:", user.email);
              messageArea.textContent = "Login successful!";
              messageArea.style.color = "green";
+             windows.location.replace='home.html';
         })
         .catch((error) => {
             displayAuthError(error, loginError);
@@ -118,6 +126,8 @@ loginForm.addEventListener('submit', (e) => {
 
 registerForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    // windows.location.href='home.html';
+
     clearErrors();
 
     const email = registerEmailInput.value;
@@ -135,6 +145,8 @@ registerForm.addEventListener('submit', (e) => {
     auth.createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
             const user = userCredential.user;
+            windows.location.href='home.html';
+
             console.log("User registered:", user.email);
             messageArea.textContent = "Registration successful! You are now logged in.";
             messageArea.style.color = "green";
