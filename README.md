@@ -7,7 +7,7 @@ CircleSpace is a social networking application that allows users to register, lo
 Fullstack
 
 ## Deployed App
-Frontend: https://community-platform-demo.web.app
+Frontend: https://circle-spacee.netlify.app/
 Backend: Firebase Services
 Database: Firebase Firestore
 
