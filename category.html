@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category Posts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">Community Platform</div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Categories</a>
+                        <div class="dropdown-menu">
+                            <a href="category.html?category=health" class="category-link">Health</a>
+                            <a href="category.html?category=education" class="category-link">Education</a>
+                            <a href="category.html?category=sports" class="category-link">Sports</a>
+                            <a href="category.html?category=technology" class="category-link">Technology</a>
+                            <a href="category.html?category=entertainment" class="category-link">Entertainment</a>
+                            <a href="category.html?category=lifestyle" class="category-link">Lifestyle</a>
+                        </div>
+                    </li>
+                    <li><a href="#" id="createPostBtn">Create Post</a></li>
+                </ul>
+            </div>
+            <div class="user-actions">
+                <span id="userDisplayName"></span>
+                <button id="logoutBtn" class="btn btn-outline">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container main-content">
+        <div class="category-header">
+            <h1 id="categoryTitle">Category Posts</h1>
+            <p id="categoryDescription"></p>
+        </div>
+
+        <div id="categoryPosts" class="posts-grid"></div>
+    </div>
+
+    <!-- Post Detail Modal -->
+    <div id="postDetailModal" class="modal">
+        <div class="modal-content post-detail-modal">
+            <span class="close">&times;</span>
+            <div id="postDetailContent">
+                <!-- Post content will be loaded here -->
+            </div>
+            <div class="comments-section">
+                <h3>Comments</h3>
+                <div id="commentsContainer"></div>
+                <form id="commentForm" class="comment-form">
+                    <textarea id="commentText" placeholder="Write a comment..." required></textarea>
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Post Modal -->
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Post</h2>
+            <form id="createPostForm">
+                <div class="form-group">
+                    <label for="postTitle">Title</label>
+                    <input type="text" id="postTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="postCategory">Category</label>
+                    <select id="postCategory" required>
+                        <option value="">Select a category</option>
+                        <option value="health">Health</option>
+                        <option value="education">Education</option>
+                        <option value="sports">Sports</option>
+                        <option value="technology">Technology</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="lifestyle">Lifestyle</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="postContent">Content</label>
+                    <textarea id="postContent" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="category.js"></script>
+</body>
+</html>
