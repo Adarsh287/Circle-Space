@@ -26,10 +26,10 @@ community-platform/
 ```
 
 ## Video Walkthrough of the project
-[Video Demo Link](...) (1-3 minutes)
+[Video Demo Link](https://youtu.be/xzKS6aDJMJE) (1-3 minutes)
 
 ## Video Walkthrough of the codebase
-[Code Walkthrough Link](...) (1-5 minutes)
+[Code Walkthrough Link](https://youtu.be/xzKS6aDJMJE) (1-5 minutes)
 
 ## Features
 - User authentication (registration and login)
